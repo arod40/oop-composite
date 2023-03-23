@@ -1,15 +1,10 @@
-import tokenization.Token;
-import tokenization.Tokenizer;
-
-import java.util.List;
+import parsing.Parser;
 
 public class App {
     public static void main(String[] args) {
-        Tokenizer tokenizer = new Tokenizer();
-        List<Token> tokens = tokenizer.tokenize("5+3- cos(4)");
-
-        for (Token t:tokens) {
-            System.out.println(t);
-        }
+        System.out.println(Parser.parse("5+(3-6.5)^2").evaluate());
     }
+
+
+
 }
